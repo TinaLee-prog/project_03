@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+html{
+    font-size: 62.5%;
+}
+body{
+    padding: 30px;
+    background-color: #f6f7fb;
+    color: #333;
+    font-size: 1.2rem;
+    font-family: "Hiragino Kaku Gothic PronN", Meiryo, sans-serif;
+}
+*,*::before, *::after {
+    box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active{
+    color: rgba(53,79,95); 
+    text-decoration: none; 
+}
+/*item*/
+.item{
+    width: 180px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-bottom: 3px solid;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.item .image{
+    display:block;
+    width:100%;
+    height: 109px;
+}
+
+.item > a::before{
+    content: "";
+    position:absolute;
+    top: 8px;
+    right: 8px;
+    left: 8px;
+    display:block;
+    height: 109px;
+    background: rgba(0,0,0, 0.1);
+}
+.item-m > a::before{
+    height:146px;
+}
+.item-l > a::before{
+    height: 403px;
+}
+
+
+item >a ::after{
+    content:'MORE';
+    position:absolute;
+    top: 20px;
+    left: 50%;
+    display: block;
+    width: 100px;
+    margin-left: -50px;
+    padding: 8px;
+    border: 3px solid #fff;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 1.6rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/**/
+.item .category{
+    margin:15px 9px 10px;
+    color:#aaa;
+    letter-spacing: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.item .category::before{
+    content:"";
+    display: inline-block;
+    width:19px;
+    height:19px;
+    margin-right: 5px;
+    border: 2px solid;
+    border-radius: 50%;
+    vertical-align: -5px;
+}
+.item .description{
+    line-height: 1.5;
+    margin: 10px;
+}
+.item > a { 
+    display:block;
+    margin: -8px -8px -11px;
+    padding: 8px 8px 11px;
+    border-radius: inherit;
+    color: #777;
+    transition: all 0.3s;
+}
+.item > a:hover {
+    box-shadow: 0 0 6px rgba(0,0,0, 0.3);
+    opacity:0.8;
+}
+.item-maindish,
+.item-maindish .category::before{
+    border-color:#ffc0cb;
+}
+.item-sashimi,
+.item-sashimi .category::before{
+    border-color:#FFF100;
+}
+.item-floral,
+.item-floral .category::before{
+    border-color:#cf7dcf;
+}
+.item-soup,
+.item-soup .category::before{
+    border-color:#c1Efff;
+}
+.item-appetizer,
+.item-appetizer .category::before{
+    border-color:#73ca3d;
+}
+/*設定item-l and item-m 的寬度*/
+.item-l{
+    width:732px;
+}
+.item-l .image{
+    height:403px;
+}
+.item-m{
+    width:364px;
+}
+.item-m .image{
+    height:146px;
+}
+
+.header{
+    padding: 25px 0;
+    border-bottom: none;
+    text-align: center;
+}
+/*設定logo 使logo轉動360度*/
+.logo{
+    width: 130px;
+    height:130px;
+    transition: 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;/* for older browsers */
+}
+.logo:hover{  
+    transform:rotate(360deg);
+    -webkit-transform: rotate(360deg); /*for older browser*/
+}
+.nav{
+    margin: 35px auto 10px;
+    text-align:center;
+    /*display: flex;*/
+}
+.nav-item{
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    list-style: none;
+    padding: 0 30px 0 0 ; /*nav置中*/
+}
+.nav-item a{
+    display: inline-block; /*設定inline-block可讓a標籤的寬度與文字寬度同寬*/
+}
+.nav-item a::after{
+    content:"";
+    display:block;
+    width:0; /*讓連結下方看不到底線*/
+    margin: 6px auto 0;
+    border-bottom: 1px solid rgba(53,79,95);
+    transition: width 0.3s ease-in-out;/*是設定動畫變化的方式*/
+}
+.nav-item a:hover::after{
+    width:100%; /*讓滑鼠移入時的狀態 才會顯示底線*/
+}
